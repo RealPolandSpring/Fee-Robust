@@ -1,7 +1,6 @@
-# Fee-Robust
-fee robust
+# Yo wsg
+hi
 
+here're my solutions for assorted problems found on usaco.org and usaco.guide
 
-my solutions for assorted problems found on usaco.org and usaco.guide
-
-fee robust.
+remember to smash that like button
