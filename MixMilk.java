@@ -37,8 +37,18 @@ public class MixMilk {
             }
 
             arrayOfBuckets[nextBucket][1] += arrayOfBuckets[currentBucket][1]; // current bucket's milk added to the next bucket's
-            int leftoverMilk = Math.abs(arrayOfBuckets[nextBucket][0] - (arrayOfBuckets[nextBucket][1] + arrayOfBuckets[currentBucket][1]));
-            arrayOfBuckets[currentBucket][1] = leftoverMilk;
+
+            int leftoverMilk = (arrayOfBuckets[currentBucket][1] + arrayOfBuckets[nextBucket][1]) - arrayOfBuckets[nextBucket][0];
+
+            if (leftoverMilk > 0) {
+                arrayOfBuckets[currentBucket][1] = leftoverMilk;
+                arrayOfBuckets[nextBucket][1] = arrayOfBuckets[nextBucket][0];
+            } else if (leftoverMilk <= 0) {
+                arrayOfBuckets[nextBucket][1] = (arrayOfBuckets[currentBucket][1] + arrayOfBuckets[nextBucket][1]);
+                arrayOfBuckets[currentBucket][1] = 0;
+            }
+
+
 
             turn++;
         }
