@@ -6,6 +6,8 @@ public class MixMilk {
 
         Kattio io = new Kattio("mixmilk");
 
+        // problem link: http://www.usaco.org/index.php?page=viewproblem2&cpid=855
+
         int[][] arrayOfBuckets = new int[3][2]; // capacity, milk amount
 
         int capacity1 = io.nextInt();
@@ -35,7 +37,7 @@ public class MixMilk {
             }
 
             arrayOfBuckets[nextBucket][1] += arrayOfBuckets[currentBucket][1]; // current bucket's milk added to the next bucket's
-            int leftoverMilk = arrayOfBuckets[nextBucket][0] - (arrayOfBuckets[nextBucket][1] += arrayOfBuckets[currentBucket][1]);
+            int leftoverMilk = Math.abs(arrayOfBuckets[nextBucket][0] - (arrayOfBuckets[nextBucket][1] + arrayOfBuckets[currentBucket][1]));
             arrayOfBuckets[currentBucket][1] = leftoverMilk;
 
             turn++;
