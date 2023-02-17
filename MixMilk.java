@@ -25,7 +25,7 @@ public class MixMilk {
         int milkAmount3 = io.nextInt();
         arrayOfBuckets[2][1] = milkAmount3;
 
-        int currentBucket = 0, nextBucket = 0;
+        int currentBucket = 0, nextBucket = 0, leftoverMilk = 0;
 
         int turn = 0;
         for (int i = 0; i < 100; i++) {
@@ -36,9 +36,7 @@ public class MixMilk {
                 nextBucket = 0;
             }
 
-            arrayOfBuckets[nextBucket][1] += arrayOfBuckets[currentBucket][1]; // current bucket's milk added to the next bucket's
-
-            int leftoverMilk = (arrayOfBuckets[currentBucket][1] + arrayOfBuckets[nextBucket][1]) - arrayOfBuckets[nextBucket][0];
+            leftoverMilk = (arrayOfBuckets[currentBucket][1] + arrayOfBuckets[nextBucket][1]) - arrayOfBuckets[nextBucket][0];
 
             if (leftoverMilk > 0) {
                 arrayOfBuckets[currentBucket][1] = leftoverMilk;
